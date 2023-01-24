@@ -1,0 +1,29 @@
+import math
+
+number1 = [" Zero", " One", " Two", " Three", " Four", " Five", " Six", " Seven", " Eight", " Nine"]
+number2 = [" Ten", " Twenty", " Thirty", " Forty", " Fifty", " Sixty", " Seventy", " Eighty", " Ninety" ]
+number3 = ["A hundred", "Two hundred", "Three hundred", "Four hundred", "Five hundred", "Six hundred", "Seven hundred", "Eight hundred", "Nine hundred"]
+
+num = int(input("Input number: "))
+
+num3 = (math.floor(num / 100)) - 1
+num2 = (math.floor((num % 100)/ 10)) - 1
+num1 = math.floor((num % 100) % 10)
+
+
+if num3 > 0:
+    print(number3[num3], end = '')
+    if num2 > 0:
+        print(number2[num2], end = '')
+        if num1 > 0:
+            print(number1[num1])
+    elif num1 > 0:
+        print(" and", end = '')
+        print(number1[num1])
+else:
+    if num2 > 0:
+        print(number2[num2], end = '')
+        if num1 > 0:
+            print(number1[num1])
+    else:
+        print(number1[num1])
